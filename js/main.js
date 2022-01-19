@@ -24,7 +24,7 @@ const validate = (event) => {
         errors.appendChild(liError);
     }
 
-    if (txtEmail.value.includes('@')) {
+    if (!txtEmail.value.includes('@')) {
         let liError = document.createElement('li');
         liError.innerText = 'Adres e-mail musi zawierać @';
         errors.appendChild(liError);
@@ -36,12 +36,10 @@ const validate = (event) => {
         errors.appendChild(liError);
     }
 
-    console.log(errors.children.length);
-
     if (errors.children.length > 0) {
         event.preventDefault();
     }
-    console.log(`validate()`);
+   
 }
 
 const allAgree = (event) => {
